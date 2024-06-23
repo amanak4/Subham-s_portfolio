@@ -48,14 +48,14 @@ const Projects = () => {
     {
       id: 5,
       src: proj5,
-      // desc: "It is a Weather application which shows temperatures of various cities across the globe made using REST API...",
+      desc: "It is a place-finder application which shows the list of various cities across the globe made using REST API...",
       demo: "https://github.com/Subham170/Place-lists",
       code: "https://github.com/Subham170/Place-lists"
     },
     {
       id: 6,
       src: proj6,
-      // desc: "It is a Face-Detection application made using Python and Computer Vision...",
+      desc: "It is a Wishper app made using ExpressJS + ReactJS...",
       demo: "https://github.com/Subham170/Secrets",
       code: "https://github.com/Subham170/Secrets"
     },
