@@ -2,10 +2,11 @@ import React,{useEffect} from 'react'
 // import Sandesh from '../assets/projects/sandeshh.png'
 import proj1 from '../assets/projects/proj1.png'
 import proj2 from '../assets/projects/proj2.png'
-import proj6 from '../assets/projects//Weather.png'
+import proj6 from '../assets/projects//whisper-web.webp'
 import Proj3 from '../assets/projects/shopeasy.png'
 import proj4 from '../assets/projects/proj4.png'
 
+import {motion, spring} from 'framer-motion';
 import proj5 from '../assets/projects/place.jpg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -65,10 +66,18 @@ const Projects = () => {
     <div name="projects" className='h-auto max-h-screen-lg  bg-gradient-to-b from-black to-gray-800 w-full text-white
      md:h-screen'>
       <div className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
-        <div className='pb-8'>
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{
+        type: 'spring',
+        stiffness: 150,
+        duration: 0.5,
+        delay:0.5
+      }} className='pb-8'>
           <h2 className='text-4xl font-bold inline border-b-4 border-gray-400'>Projects</h2>
           <p className='py-6'>Check out some of my work </p>
-        </div>
+        </motion.div>
         <div   className='grid sm:grid-cols-2 md:grid-cols-3 mb-20 gap-8 px-12 sm:px-0'>
           {
             Projects().map(({ id, src, desc, demo, code }) => (
@@ -82,7 +91,7 @@ const Projects = () => {
       data-aos-duration="500"
       data-aos-offset="200"
       data-aos-easing="ease-in-sine"
-      data-aos-delay="300"
+      data-aos-delay="100"
       data-aos-once="false"      
        className='shadow-md shadow-gray-600 rounded-lg'>
                 <img src={src} alt="Ai" className='rounded-md duration-200 hover:scale-105' />

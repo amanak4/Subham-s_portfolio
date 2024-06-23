@@ -4,6 +4,7 @@ import '../App.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Resume from '../assets/Resume.pdf';
+import {motion} from "framer-motion";
 const About = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 })
@@ -12,11 +13,17 @@ const About = () => {
     return (
         <div name="about" className='w-full h-auto bg-gradient-to-b from-gray-800 to-black text-white'>
             <div className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-auto'>
-                <div className='pb-8'>
+                <motion.div initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{
+        type: 'spring',
+        stiffness: 150,
+        duration: 0.5
+      }}   className='pb-8'>
 
                     <h2 className='text-4xl  font-bold inline border-b-4 border-gray-500'>About</h2>
 
-                </div>
+                </motion.div>
 
                 <p data-aos="slide-up" data-aos-duration="500" className='text-xl mt-5 ease-in fade-in'>
                     I'm currently a pre-final student at Indian Institute of Technology (Indian School of Mines) Dhanbad ,pursuing Bachelor of Technology in Mechanical Engineering. Along the way I delved into the world of cutting-edge technologies such as C++, Javascript, React, APIs, Databases and much more. I also took my passion for technology and leadership to new heights by participating in numerous Hackathon and Coding contests.
